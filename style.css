@@ -4,11 +4,17 @@
 }
 body{
     background-color: #222;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .clock{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .outer-clock-face{
     width: 80vh;
@@ -73,13 +79,39 @@ body{
 }
 
 
+/* side text */
+.side-text{
+    position: absolute;
+
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-transform: uppercase;  
+    
+    font-size: 4rem;
+}
+.left-text{
+    left: 3vw;
+}
+.right-text{
+    right: 3vw;
+}
+
+
 /* design for mobile device */
 @media only screen and (max-width: 600px) {
-    .marking{
+    .marking {
         font-size: 5rem;
     }
-    .outer-clock-face{
+
+    .outer-clock-face {
         width: 80vw;
         height: 80vw;
+    }
+}
+
+/* responsible design for the side text */
+@media only screen and (max-width: 800px) {
+    .side-text {
+        display: none;
     }
 }

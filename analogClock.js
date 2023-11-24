@@ -1,6 +1,6 @@
 function draw(){
     const date = new Date()
-    const hours = date.getHours() + 8
+    const hours = date.getHours()
     const minutes = date.getMinutes()
     const seconds = date.getSeconds()
 
@@ -11,6 +11,16 @@ function draw(){
     document.querySelector('.min-hand').style.transform = `rotate(${minutesRotation}deg)`
     const hourRotation = hours / 12 * 360 + minutesRotation / 360
     document.querySelector('.hour-hand').style.transform = `rotate(${hourRotation}deg)`
+
+    //set weekday
+    const weekdayNumber = date.getDay()
+    weekday = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag' ]
+    document.querySelector('.left-text').innerHTML = weekday[weekdayNumber]
+
+    //month and monthday
+    const monthNumber = date.getMonth() + 1
+    const dayNumber = date.getDate()
+    document.querySelector('.right-text').innerHTML = `${dayNumber} ${monthNumber}`
 
     //activate day/night modus
     checkTime(hours)
@@ -31,11 +41,15 @@ function checkTime(hours){
         //Design for the night
         document.querySelector('body').style.backgroundColor = "#222"
         document.querySelectorAll('.marking').forEach(element =>{
-        element.style.color = "wheat"
-    })
-    document.querySelectorAll('.hand').forEach(element =>{
-        element.style.backgroundColor = "wheat"
-    })
+            element.style.color = "wheat"
+        })
+        document.querySelectorAll('.hand').forEach(element =>{
+            element.style.backgroundColor = "wheat"
+        })
+
+        document.querySelectorAll(".side-text").forEach(element =>{
+            element.style.color = "wheat"
+        })
     }else{
         //Design for the day
         document.querySelector('body').style.backgroundColor = "#fff"
@@ -45,7 +59,17 @@ function checkTime(hours){
         document.querySelectorAll('.hand').forEach(element =>{
             element.style.backgroundColor = "black"
         })
+
+        document.querySelectorAll(".side-text").forEach(element =>{
+            element.style.color = "black"
+        })
+
     }
 }
+
+//add side text
+document.write('<p class="side-text left-text">Hallo</p>')
+document.write('<p class="side-text right-text">Hallo</p>')
+
 
 draw()
