@@ -1,6 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.clock{
+    display: flex;
+    justify-content: center;
+}
+
 .hand{
     width: 10px; 
     height: 200px;
 
-    background-color: red;
+    background-image: linear-gradient(0deg, cornflowerblue 50%, wheat 50%);
+    position: absolute;
 }
