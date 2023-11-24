@@ -24,6 +24,7 @@ body{
     justify-content: center;
 }
 
+/* design the hands */
 .hand{
     position: absolute;
     transform-origin: 50% 100%;
@@ -45,11 +46,11 @@ body{
     background-color: red !important;
 }
 
+/* design for marking 12, 9, 6, 3 */
 .marking{
     position: absolute;
     font-size: 8rem;
 }
-
 .marking-one{
     left: 50%;
     top: 7%;
@@ -72,7 +73,7 @@ body{
 }
 
 
-
+/* design for mobile device */
 @media only screen and (max-width: 600px) {
     .marking{
         font-size: 5rem;
