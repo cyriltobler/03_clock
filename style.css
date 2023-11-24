@@ -7,11 +7,64 @@
     display: flex;
     justify-content: center;
 }
+.outer-clock-face{
+    width: 80vw;
+    height: 80vw;
+
+    display: flex;
+    justify-content: center;
+    border: black 10px solid;
+
+    position: absolute;
+}
+.inner-clock-face{
+    display: flex;
+    justify-content: center;
+}
 
 .hand{
-    width: 10px; 
-    height: 200px;
-
-    background-image: linear-gradient(0deg, cornflowerblue 50%, wheat 50%);
     position: absolute;
+    transform-origin: 50% 100%;
+    bottom: 50%;
+}
+.hour-hand{
+    height: 25%;
+    width: 8px;
+    background-color: black;
+}
+.min-hand{
+    height: 30%;
+    width: 8px;
+    background-color: black;
+}
+.second-hand{
+    height: 35%;
+    width: 1px;
+    background-color: red;
+}
+
+.marking{
+    position: absolute;
+    font-size: 8rem;
+}
+
+.marking-one{
+    left: 50%;
+    top: 7%;
+    transform: translateX(-50%);
+}
+.marking-two {
+    left: 90%;
+    top: 50%;
+    transform: translate(-100%, -50%);
+}
+.marking-three {
+    left: 50%;
+    top: 93%;
+    transform: translate(-50%, -100%);
+}
+.marking-four {
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
 }
